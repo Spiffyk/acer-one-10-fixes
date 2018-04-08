@@ -4,15 +4,28 @@ This repository contains fixes for Ubuntu on Acer One 10 S1003.
 
 ## Features
 ### What's fixed by this
-* Wifi
-* Integrated audio
-    * integrated speakers and headphones
-    * Pulseaudio no longer crashes on login
-* Missing Intel firmware
-    * Not sure if something does not work because of this but the message kept popping up and was easy to fix so it's included
+
+* Wireless network
+  * Fixed by [Armbian's patched firmware](https://github.com/armbian/firmware)
+
+* Audio
+  * Integrated speakers and headphones
+  * Pulseaudio no longer crashes on login
+
+* Screen brightness
+  * Fixed by deferring modprobe of `i915` module
+
+* i915 firmware
+  * Nothing is proven to have been broken by the missing firmware but
+    the blobs are available on Intel's site so it is included here
+
 
 ### What does not work (yet?)
-* Accelerometer (automatic screen rotation)
-* Screen brightness (a bug in kernel, apparently?)
+
+* Screen auto-rotate
+
+* Bluetooth
+
 * HDMI audio
-    * this is disabled by the script because it crashed Pulseaudio
+  * Disabled because it crashes PulseAudio and leaves the tablet completely
+    without sound
